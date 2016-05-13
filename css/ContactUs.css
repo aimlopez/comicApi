@@ -10,7 +10,7 @@
   width: 85%;
     margin: 0 auto;
     overflow: auto;
-    
+
    
     
 
@@ -74,9 +74,11 @@ div.gm-style{
 
 @media (min-width:481px) and (max-width:1024px) {
     
- .inne_info, .inne-ad{
-        width: 100%;
-    }
+
+ .inne-ad{
+    padding-top: 50px;
+    height: 300px;
+}
 
     #contact_form{
         height: 490px;
@@ -88,6 +90,14 @@ div.gm-style{
          
     
     }
+
+    div#map-wrapper, .inne_info, .inne-ad{
+        width: 100%;
+        float: none;
+    }
+#map-wrapper{
+    padding: 0;
+}
     
 
 .a{
@@ -107,7 +117,7 @@ div.gm-style{
     margin:0;}
     
    div#map-wrapper, .inne_info, .inne-ad{
-        width: 90%;
+        width: 100%;
         float: none;
     }
     
@@ -122,5 +132,6 @@ div.gm-style{
     }
 .inne-ad{
     padding-top: 50px;
+    height: 350px;
 }
 }

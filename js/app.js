@@ -1,23 +1,86 @@
-(function ($) {
-    'use strict'
+//(function ($) {
+ //   'use strict'
 
     var apiKey = '1b7b1dda127cc304e7dacb7ace0decf4';
     var privateKey = '3948f3d211b700a8d98455034a2d974c7a3edc8b';
     var ts = new Date().getTime();
     var hash = CryptoJS.MD5 (ts + privateKey + apiKey).toString();
-    console.log (hash);
-     console.log (apiKey);
+    
 
   function getInfoMarvel() {
     
 
    //första end-point comics list
+
+    // var url = "http://gateway.marvel.com/v1/public/comics"; 
      var url = "http://gateway.marvel.com/v1/public/comics";
     
     $.getJSON(url, {
-            ts: ts,
-            apikey: apiKey,
-            hash: hash,
+        //  dateRange: '2013-01-01%2C2016-12-31',
+          ts: ts,
+          apikey: apiKey,
+          hash: hash,
+          // StartYear: '2010',
+            
+    })
+    .done(function(response) {
+
+      console.log(response.data);
+      
+     var credits = response.attributionText;
+
+        var IMAGE_NOT_AVAIL = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
+        
+        var photoHTML='';
+        if(response.code === 200) {
+
+          console.log('num of comics '+response.data.results.length);
+          for(var i in response.data.results) {
+
+            var comic = response.data.results[i];
+            
+            var img = comic.thumbnail.path +  "/portrait_uncanny" + "." + comic.thumbnail.extension;
+            //console.log(img);
+              if(comic.thumbnail && comic.thumbnail.path != IMAGE_NOT_AVAIL) {
+
+                if (comic.description != null || comic.dates.type === 'onsaleDate'){
+
+                  photoHTML+= '<div class="images">';
+                    photoHTML += '<a href="'+comic.urls[0].url +'"><img class="main-img" src="'+ img +'"></a>';
+                    photoHTML+= '<h3 class="comic-title">' + comic.title + '</h3>';
+                    photoHTML += '<p class="descript">'+ comic.description + '</p></div>'
+
+                 }
+
+              }
+                    
+        }
+                    $('#results').append(photoHTML);
+                    $('#results-info').append(credits); 
+
+        } 
+ 
+    });       
+
+
+  } 
+  
+
+
+
+  
+//getInfoMarvel();
+//getInfoMarvelCH();
+//}(jQuery));
+
+function getInfoMarvelCH(){
+    var url = "http://gateway.marvel.com/v1/public/characters";
+    
+    $.getJSON(url, {
+        //  dateRange: '2013-01-01%2C2016-12-31',
+          ts: ts,
+          apikey: apiKey,
+          hash: hash,
           // StartYear: '2010',
             
     })
@@ -34,49 +97,30 @@
         if(response.code === 200) {
 
           
-          //console.log('num of comics '+response.data.results.length);
-         for(var i=0;i<response.data.results.length;i++) {
+          console.log('num of comics '+response.data.results.length);
+          for(var i in response.data.results) {
 
-          var comic = response.data.results[i];
-          var img = comic.thumbnail.path +  "/portrait_uncanny" + "." + comic.thumbnail.extension;
-          console.log(img);
-               if(comic.thumbnail && comic.thumbnail.path != IMAGE_NOT_AVAIL) {
+            var comic = response.data.results[i];
+            
+            var img = comic.thumbnail.path +  "/portrait_uncanny" + "." + comic.thumbnail.extension;
+            //console.log(img);
+              if(comic.thumbnail && comic.thumbnail.path != IMAGE_NOT_AVAIL) {
 
-               // console.log(comic);
-                // $.each(response.data.results[i],function( i, val ){
-
-                 photoHTML+= '<span class="images">';
-                // photoHTML+= '<a href=""><p class="comic-title">' + comic.title+ '</p>';
-                  photoHTML += '<img src="'+ img +'"></a></span>'
+                    photoHTML+= '<div class="imagesCh">';
+                    photoHTML += '<a href="'+ comic.urls[1].url + '"><img class="main-img" src="'+ img +'"></a>';
+                    photoHTML+= '<h3 class="comic-title">' + comic.name + '</h3></div>';
+                    //photoHTML += '<p class="descript">'+ comic.description + '</p>'
                    
-                    $('#results').append(photoHTML);
-                 //})//end each
 
-          /*  if(comic.thumbnail && comic.thumbnail.path != IMAGE_NOT_AVAIL) {
-              var image = {};
-              $.each(image.title) = comic.title;*/
+                
 
-              
-//for(var x=0; x<comic.dates.length;x++) {
-//if(comic.dates[x].type === 'onsaleDate') {
-//image.date = new Date(comic.dates[x].date);
-//}
-//}
-//image.url = comic.thumbnail.path + "." + comic.thumbnail.extension;
-//images.push(image);
-//}
-}
-}
- /* var tblRow = "<tr>" + "<td>" + comic.title + "</td>" + "</tr>"
-           $(tblRow).appendTo("#userdata tbody");
+              }
+          }
+                $('#results-ch').append(photoHTML);
 
-           $('h6').text(response.attributionText);*/
-    
-   }
+        }   
  
- });       
+    });       
 
 
-}
-getInfoMarvel();
-}(jQuery));
+  } 

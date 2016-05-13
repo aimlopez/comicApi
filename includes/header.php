@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name='viewport' content-type='initial-scale=1.0 , user-scalable=yes' />
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/ContactUs.css">
-     <link rel="stylesheet" type="text/css" href="css/pages.css">
+    <link rel="stylesheet" type="text/css" href="css/pages.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,800,600' rel='stylesheet' type='text/css'>
     <script src="js/submenu.js"></script>
    
@@ -30,7 +32,7 @@
             <div id="nav-w">
                 <nav id="main-menu" display="none">
                     <ul>
-                        <li><a href="index.html">ComicS War</a></li>
+                        <li><a href="index.php">ComicS War</a></li>
                         <li><a href="#">Marvel</a>
                             <ul class="submenu">
                                 <li><a href="marvelCharacters.php">Marvel Characters</a></li>
