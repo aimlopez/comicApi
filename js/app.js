@@ -29,11 +29,11 @@
       $('h4').text(response.attributionText);
 
         var IMAGE_NOT_AVAIL = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
-        var images;
+        
         var photoHTML='';
         if(response.code === 200) {
 
-          images = [];
+          
           //console.log('num of comics '+response.data.results.length);
          for(var i=0;i<response.data.results.length;i++) {
 

@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Marvel</title>
-
-</head>
-<body>
-
+<?php
+require_once('includes/header.php');
+?>
     
+ <section id="main-content"> 
+
+<h1 id="comic_title">Marvel Comics</h1>
+
+<div>
+	<p>Her can you see your favorite Marvel comics !!</p>
+
+</div>
+
+
     <div id="results"></div>
 
-<table id='userdata'>
-<thead>
-	
-</thead>
-<tbody>
-	
 
-
-</tbody>
-</table>
-<h4></h4>
-
+</section>
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
     <script src="js/app.js"></script>
+
+
 </body>
 </html>
