@@ -4,18 +4,26 @@ require_once('includes/header.php');
     
  <section id="main-content"> 
 
-<h1 id="comic_title">MARVEL CHARACTERS</h1>
+	<h1 id="comic_title">MARVEL CHARACTERS</h1>
 
 
 	<p class="main-text">Here can you see your favorite Marvel characters !!</p>
 
-<!--<div class="group-form">
-<label for='search'>Search: </label>
-<input id='search' name='search'>
 
-</div> -->
+	<div class="form-group"> 
+		<label for="search-ch"> Search:</label>
+		<input type="text" name="search-ch" id= "search-ch" />
+    	<button type='button' name='submit' id='submit' value='submit'>Submit</button>
+	</div>
 
     <div id="results-ch"></div>
+
+    <div id="results-ch_info">
+    	<h1 id="results-ch_name"></h1>
+    	<img class="character_img" />
+    	<p id="results-ch_descript"></p>
+    </div>
+
     <div id="results-info-ch"></div>
 
 

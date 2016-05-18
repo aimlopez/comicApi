@@ -25,7 +25,7 @@ require_once('includes/header.php');
     <script src="js/app.js"></script>
     <script type="text/javascript">
     	getInfoMarvel();
-    	</script>
+    </script>
 
 </body>
 </html>
