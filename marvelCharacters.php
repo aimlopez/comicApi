@@ -13,17 +13,21 @@ require_once('includes/header.php');
 	<div class="form-group"> 
 		<label for="search-ch"> Search:</label>
 		<input type="text" name="search-ch" id= "search-ch" />
-    	<button type='button' name='submit' id='submit' value='submit'>Submit</button>
+    	<button class='btn' type='button' name='submit' id='submit' value='submit'>Submit</button>
 	</div>
 
     <div id="results-ch"></div>
 
+
     <div id="results-ch_info">
-    	<h1 id="results-ch_name"></h1>
-    	<img class="character_img" />
+    	<a class='ch_img'><img class="character_img" />
+        <h1 id="results-ch_name"></h1></a>
     	<p id="results-ch_descript"></p>
     </div>
 
+    <div id="results-ch_comics"></div>
+
+    
     <div id="results-info-ch"></div>
 
 

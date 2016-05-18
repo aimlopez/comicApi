@@ -1,6 +1,5 @@
 
 
-
 #main-content{
 	background-color: white;
 	width: 960px;
@@ -14,43 +13,99 @@
 	margin-bottom: 0.5em;
 }
 
-#results, #results-ch{
+#results, #results-ch, {
 	box-sizing: border-box;
 	margin: 0 auto;
 }
+#results-ch_info{
+	width: 50%;
+	margin: 4em auto;
+	border: 1px solid #e6e6e6;
+	padding: 2em;
+	border-radius: 10px;
 
-div.images, div.imagesCh{
+}
+
+.images, 
+.imagesCh, 
+.imagesCh_comic{
 	margin: 0.8em;
 	float: left;
 	width: 400px;
-	margin-top: 0.8em;
 	border: 1px solid #e6e6e6;
 	padding: 0.5em;
 	border-radius: 10px;
 }
-div.images{
+.images{
 	height: 700px; 
 }
 
-div.imagesCh{
+.imagesCh{
 	height: 550px;
 }
-.main-img{
+
+.imagesCh_comic{
+	height: 300px;
+	width: 250px;
+}
+
+.main-img, .imgCh_comic{
 	margin-left: 3em;
 	margin-top: 1em;
 	margin-bottom: 0.8em;
+}
+
+.imgCh_comic{
+	margin-left: 1.5em;
+}
+
+.character_img{
+	margin: 1em 5.5em;
+}
+a:link{
+	color: black;
+}
+
+a:hover{
+	color: #A21304;
 }
 
 p.descript, {
 width: 300px;
 
 }
+
 div#results-info, div#results-info-ch{
 	clear:both;
 	float: none;
 
 }
 
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+}
+
+input{
+	padding: 6px 12px;
+	border: 1px solid #e6e6e6;
+	border-radius: 4px;
+	font-size: 14px;
+ 	font-weight: normal;
+}
+
+.form-group{
+	margin: 2em 0.5em 2em 1em;
+	margin-bottom: 2em;
+
+}
 /** ------------------ LOW RESOLUTION ---------------------- **/
 
 
@@ -67,10 +122,14 @@ div.images, div.imagesCh{
 
 	float: none;
 	display: block;
+	height: 400px;
+	width: 300px;
 }
 
 
-
+.main-img{
+	height: 350px;
+}
 
 
 

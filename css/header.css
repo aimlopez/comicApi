@@ -27,6 +27,10 @@
 
 		}
 
+html{
+	font-family: 'Lato';
+}		
+
 #nav-w{
    width: 740px;
    position: absolute;
