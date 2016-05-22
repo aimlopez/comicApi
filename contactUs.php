@@ -77,7 +77,7 @@ require_once('includes/header.php');
 
 
     </script>
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZf5XC3CRbSNoAnKFG_nHfnOY0jLa4ci0&callback=initMap"></script> 
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnghLYP5u2LcZlMbhw9kvSn5aHaPx-mCQ&callback=initMap"></script> 
 </body>
 
 </html>
